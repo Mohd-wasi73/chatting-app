@@ -13,11 +13,37 @@ body{
 .main{
     width:50vw;
     height:50vh;
-    background-color: rgb(120, 136, 211);
-    border: .5rem solid rgb(68, 108, 241);
+    background: none;
+    border: .5rem solid rgb(17, 17, 17);
     border-radius: 1rem;
-   
+   overflow: scroll;
 }
+.main::-webkit-scrollbar {
+    width: 1em;
+  }
+   
+  .main::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  .main::-webkit-scrollbar-thumb {
+    background-color: rgb(147, 165, 226);
+    outline: 1px solid slategrey;
+    border-radius:2rem;
+  }
+  html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.main::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+.main::-webkit-scrollbar-thumb {
+    background:transparent;
+}
+
 .content{
     height:70%;
     width:100%;
@@ -25,7 +51,9 @@ body{
     overflow-y: auto;
     border: 1px solid #ccc;
     display: flex;
+    position: relative;
     flex-direction: column-reverse;
+
 }
 .content::-webkit-scrollbar {
     width: 1em;
@@ -54,12 +82,20 @@ body{
 }
 .heading{
     text-align: center;
-    font-size:4vw;
+    font-size:2rem;
     color:rgb(243, 242, 247);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
     position: sticky;
 }
-
+li{
+    list-style: none;
+    background-color: #1f1f20;
+    width:50%;
+    border-radius: .5rem;
+    color:#ccc;
+    padding:.5rem;
+    margin:.2rem;
+}
 textarea{
 color: aliceblue;
    padding-left:1rem;
@@ -78,10 +114,11 @@ color: aliceblue;
     background: transparent;
 }
 button{
+    margin:1rem;
     background-color: #152238;
     outline: none;
     color:white;
-    border:none;
-   
+    border:2px solid;
+     border-radius: 2rem;
 }
   

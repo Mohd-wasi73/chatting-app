@@ -8,6 +8,7 @@ const roombox=document.querySelector(".room");
 const roomid=document.querySelector(".room-id");
 const username=document.querySelector(".username");
 const joinbtn=document.querySelector(".joinbtn");
+const leavebtn=document.querySelector(".leave");
 let roomId;
     
 joinbtn.addEventListener("click",(e)=>{
@@ -30,4 +31,9 @@ socket.on("received-msg",(data)=>{
         li.innerHTML=`<strong>${data.name}:-</strong><span>${data.message}</span>`;
         ul.append(li);
        
+})
+leavebtn.addEventListener("click",(e)=>{
+    socket.emit("leave",{roomId});
+    main.style.display="none";
+    roombox.style.display="block";
 })

@@ -7,7 +7,7 @@ const socketio=require("socket.io");
 const io=socketio(server);//evolving http server in to socket.io server.
 app.use("/",express.static(path.join(__dirname,"public")));
 const user={};
-io.on("connection",async (socket)=>{//"connection " event are built-in
+io.on("connection",(socket)=>{//"connection " event are built-in
     console.log(`someone got connected width id-${socket.id}`);
     socket.on("join",(data)=>{
           socket.join(data.roomId);
@@ -18,6 +18,9 @@ io.on("connection",async (socket)=>{//"connection " event are built-in
             io.to(data.roomId).emit("received-msg",{
                 name:user[socket.id],message:data.message
             })
+    })
+    socket.on("leave",(data)=>{
+        socket.leave(data.roomId);
     })
 })
 const port=process.env.PORT || 3000;
