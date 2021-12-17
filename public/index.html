@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatApp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="heading"><span>Chatting-App</span></div>
+    <div class="room">
+        <label for="username" class="form-label"></label>
+        <input style="background-color:#152238;" type="text" class="form-control room-id" id="username" placeholder="Room-id" required>
+        <input style="background-color:#152238;" type="text" class="form-control username" id="username" placeholder="username" required>
+        
+        <button class="joinbtn mt-3 " style="background-color:black;">join</button>
+    </div>
+
+    <div class="main">
+
+
+        <div class="content">
+            <ul class="messages-box">
+            </ul>
+
+        </div>
+        <textarea class="text-area" placeholder="messsage"></textarea>
+        <button class="sendbtn">send</button>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- this file is socket file that is provided by socket.io on client side -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
