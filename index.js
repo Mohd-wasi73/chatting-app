@@ -16,7 +16,7 @@ io.on("connection",async (socket)=>{//"connection " event are built-in
     
     socket.on("send-msg",(data)=>{
             io.to(data.roomId).emit("received-msg",{
-                name:user.socket.id,message:data.message
+                name:user[socket.id],message:data.message
             })
     })
 })
